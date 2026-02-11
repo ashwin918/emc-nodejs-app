@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  triggers {
+    githubPush()
+  }
+
   environment {
     IMAGE_NAME = 'emc-nodejs-app:latest'
   }
@@ -11,6 +15,7 @@ pipeline {
         git branch: 'main', url: 'https://github.com/Venkiemc/emc-nodejs-app.git'
       }
     }
+
     stage('Build Docker Image') {
       steps {
         bat "docker build -t %IMAGE_NAME% ."
