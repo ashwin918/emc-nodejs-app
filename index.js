@@ -26,7 +26,7 @@ const server = http.createServer((req, res) => {
       </style>
     </head>
     <body>
-      <h1>Ashwin balaji viswanthan!</h1>
+      <h1>Ashwin balaji !</h1>
     </body>
     </html>
   `);
